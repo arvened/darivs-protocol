@@ -1,0 +1,278 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://darivs.protocol/schema/impact-v0.1.0",
+  "title": "DARIVS Impact Metric",
+  "description": "JSON-LD schema for measuring and tracking volunteer impact",
+  "type": "object",
+  
+  "required": [
+    "id",
+    "type",
+    "impactType",
+    "impactValue",
+    "impactUnit",
+    "recordedBy",
+    "impactDate",
+    "createdAt"
+  ],
+  
+  "properties": {
+    "@context": {
+      "type": "string",
+      "description": "Reference to DARIVS context"
+    },
+    
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Unique impact record identifier"
+    },
+    
+    "type": {
+      "type": "string",
+      "enum": ["ImpactMetric"],
+      "description": "Entity type"
+    },
+    
+    "impactType": {
+      "type": "string",
+      "description": "Type/category of impact",
+      "enum": [
+        "lives_helped",
+        "families_assisted",
+        "people_trained",
+        "items_collected",
+        "hours_contributed",
+        "funds_raised",
+        "trees_planted",
+        "meals_provided",
+        "people_sheltered",
+        "medical_services_provided",
+        "educational_hours",
+        "community_built",
+        "projects_completed",
+        "infrastructure_built",
+        "emissions_reduced",
+        "other"
+      ]
+    },
+    
+    "impactValue": {
+      "type": "number",
+      "description": "Numeric value of impact",
+      "minimum": 0
+    },
+    
+    "impactUnit": {
+      "type": "string",
+      "description": "Unit of measurement",
+      "enum": [
+        "people",
+        "families",
+        "hours",
+        "days",
+        "kg",
+        "tons",
+        "liters",
+        "meals",
+        "items",
+        "currency",
+        "square_meters",
+        "trees",
+        "units",
+        "other"
+      ]
+    },
+    
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 currency code (if impactUnit is currency)",
+      "pattern": "^[A-Z]{3}$"
+    },
+    
+    "description": {
+      "type": "string",
+      "description": "Detailed description of impact",
+      "maxLength": 2000
+    },
+    
+    "impactDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date impact occurred"
+    },
+    
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date (for ongoing impact)"
+    },
+    
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date (for completed impact periods)"
+    },
+    
+    "impactArea": {
+      "type": "object",
+      "description": "Geographic area of impact",
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 country code"
+        },
+        "region": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      }
+    },
+    
+    "volunteer": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of volunteer who generated impact"
+    },
+    
+    "organization": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of organization beneficiary or coordinator"
+    },
+    
+    "task": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of related task"
+    },
+    
+    "event": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of related event"
+    },
+    
+    "recordedBy": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of person/system recording impact"
+    },
+    
+    "verifiedBy": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of person who verified impact"
+    },
+    
+    "verificationMethod": {
+      "type": "string",
+      "description": "How impact was verified",
+      "enum": [
+        "self_reported",
+        "coordinator_confirmed",
+        "organization_verified",
+        "third_party_audit",
+        "sensor_data",
+        "receipt_proof",
+        "photo_evidence",
+        "video_evidence",
+        "documentation",
+        "other"
+      ]
+    },
+    
+    "evidenceLinks": {
+      "type": "array",
+      "description": "Links to supporting evidence (photos, documents, etc)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["photo", "video", "document", "certificate", "receipt", "other"]
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    
+    "beneficiaries": {
+      "type": "array",
+      "description": "Directly benefited individuals/groups",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["individual", "family", "group", "community", "organization"]
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    
+    "sdgAlignment": {
+      "type": "array",
+      "description": "UN Sustainable Development Goals (SDGs) addressed",
+      "items": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 17
+      }
+    },
+    
+    "quantified": {
+      "type": "boolean",
+      "description": "Whether impact is objectively quantified or estimated"
+    },
+    
+    "confidence": {
+      "type": "string",
+      "enum": ["very_low", "low", "medium", "high", "very_high"],
+      "description": "Confidence level in impact measurement"
+    },
+    
+    "tags": {
+      "type": "array",
+      "description": "Categorization tags",
+      "items": {
+        "type": "string"
+      }
+    },
+    
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When impact record was created"
+    },
+    
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp"
+    },
+    
+    "verified": {
+      "type": "boolean",
+      "default
