@@ -1,0 +1,216 @@
+{
+  "@context": "https://darivs.protocol/schema/darivs-context.jsonld",
+  "id": "https://helpua.org/events/volunteer-training-july-2026",
+  "type": "Event",
+  
+  "eventTitle": "Volunteer Orientation & Training Workshop",
+  "eventDescription": "Join us for a comprehensive orientation and training program for new volunteers. Learn about Help Ukraine's mission, programs, and best practices for volunteering. This workshop covers volunteer rights and responsibilities, cultural sensitivity training, COVID-19 safety protocols, and hands-on experience with our tools and systems.",
+  
+  "eventType": "training",
+  "eventDate": "2026-07-10",
+  "eventTime": "09:00",
+  "endTime": "17:00",
+  
+  "status": "planned",
+  
+  "eventOrganizer": "https://helpua.org/orgs/help-ukraine-kyiv",
+  
+  "location": {
+    "virtual": false,
+    "onsite": true,
+    "hybrid": false,
+    "venue": "Help Ukraine Training Center",
+    "address": "15 Independence Avenue, Suite 300",
+    "city": "Kyiv",
+    "country": "UA",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  },
+  
+  "registrationRequired": true,
+  "registrationDeadline": "2026-07-05",
+  
+  "maxAttendees": 50,
+  "currentAttendees": 32,
+  
+  "participates": [
+    "https://helpua.org/volunteers/alice-kovalenko-ua",
+    "https://helpua.org/volunteers/bob-johnson-us",
+    "https://helpua.org/volunteers/diana-mueller-de"
+  ],
+  
+  "agenda": [
+    {
+      "time": "09:00",
+      "title": "Welcome & Introduction",
+      "description": "Opening remarks and icebreaker activities",
+      "speaker": "Maria Shevchenko (Executive Director)",
+      "duration": 30
+    },
+    {
+      "time": "09:30",
+      "title": "Help Ukraine's Mission & Programs",
+      "description": "Overview of organizational goals, current programs, and impact",
+      "speaker": "Ivan Petrenko (Program Director)",
+      "duration": 60
+    },
+    {
+      "time": "10:30",
+      "title": "Coffee Break",
+      "duration": 15
+    },
+    {
+      "time": "10:45",
+      "title": "Volunteer Rights & Responsibilities",
+      "description": "Legal framework, expectations, and support systems",
+      "speaker": "Olena Kovalenko (HR Manager)",
+      "duration": 45
+    },
+    {
+      "time": "11:30",
+      "title": "Cultural Sensitivity & Trauma-Informed Volunteering",
+      "description": "Training on working with trauma-affected populations",
+      "speaker": "Dr. Sergei Volkov (Psychologist)",
+      "duration": 60
+    },
+    {
+      "time": "12:30",
+      "title": "Lunch",
+      "duration": 60
+    },
+    {
+      "time": "13:30",
+      "title": "Safety Protocols & Guidelines",
+      "description": "COVID-19, security, and personal safety procedures",
+      "speaker": "Security & Safety Officer",
+      "duration": 45
+    },
+    {
+      "time": "14:15",
+      "title": "Tools & Systems Walkthrough",
+      "description": "Hands-on training with volunteer management platform",
+      "speaker": "Tech Team",
+      "duration": 60
+    },
+    {
+      "time": "15:15",
+      "title": "Break",
+      "duration": 15
+    },
+    {
+      "time": "15:30",
+      "title": "Program-Specific Breakout Sessions",
+      "description": "Volunteers break into groups by program area",
+      "duration": 75
+    },
+    {
+      "time": "16:45",
+      "title": "Q&A and Closing Remarks",
+      "description": "Final questions and next steps",
+      "speaker": "All facilitators",
+      "duration": 15
+    }
+  ],
+  
+  "requirements": {
+    "skills": [
+      "Basic English communication",
+      "Willingness to learn"
+    ],
+    "materials": [
+      "Notebook and pen",
+      "Laptop (optional, for tool walkthrough)"
+    ],
+    "documentation": [
+      "Valid identification",
+      "Proof of COVID-19 vaccination or negative test"
+    ]
+  },
+  
+  "supplies": [
+    {
+      "name": "Training Materials Packet",
+      "quantity": 50,
+      "description": "Printed handbook and reference guides"
+    },
+    {
+      "name": "Name Badges",
+      "quantity": 50
+    },
+    {
+      "name": "Coffee & Tea",
+      "quantity": 100,
+      "description": "Beverages for morning and afternoon sessions"
+    },
+    {
+      "name": "Lunch Boxes",
+      "quantity": 50,
+      "description": "Pre-packed vegetarian and non-vegetarian options"
+    },
+    {
+      "name": "Snacks",
+      "quantity": 100,
+      "description": "Cookies, fruit, and nuts for breaks"
+    }
+  ],
+  
+  "catering": {
+    "provided": true,
+    "mealOptions": [
+      "Vegetarian",
+      "Vegan",
+      "Gluten-free",
+      "Halal"
+    ],
+    "dietaryAccommodations": true
+  },
+  
+  "accessibility": {
+    "wheelchairAccessible": true,
+    "parking": true,
+    "publicTransit": true,
+    "signLanguageInterpreter": true,
+    "captioning": true
+  },
+  
+  "costPerAttendee": {
+    "amount": 0,
+    "currency": "EUR",
+    "freeForVolunteers": true
+  },
+  
+  "impact": [
+    {
+      "metric": "Volunteers Trained",
+      "target": 50,
+      "unit": "people"
+    },
+    {
+      "metric": "Knowledge Transfer",
+      "target": 100,
+      "unit": "percent"
+    },
+    {
+      "metric": "Volunteer Retention",
+      "target": 80,
+      "unit": "percent"
+    }
+  ],
+  
+  "tags": [
+    "training",
+    "orientation",
+    "volunteer-support",
+    "mandatory",
+    "kyiv"
+  ],
+  
+  "mediaLinks": {
+    "eventFlyer": "https://helpua.org/images/training-flyer.pdf",
+    "registrationForm": "https://helpua.org/register/training-july-2026"
+  },
+  
+  "createdAt": "2026-06-01T10:00:00Z",
+  "updatedAt": "2026-06-25T14:20:00Z",
+  "verified": true
+}
