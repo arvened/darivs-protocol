@@ -1,0 +1,223 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://darivs.protocol/schema/event-v0.1.0",
+  "title": "DARIVS Event",
+  "description": "JSON-LD schema for volunteer events and gatherings",
+  "type": "object",
+  
+  "required": [
+    "id",
+    "type",
+    "eventTitle",
+    "eventDescription",
+    "eventDate",
+    "eventOrganizer",
+    "createdAt"
+  ],
+  
+  "properties": {
+    "@context": {
+      "type": "string",
+      "description": "Reference to DARIVS context"
+    },
+    
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Unique event identifier"
+    },
+    
+    "type": {
+      "type": "string",
+      "enum": ["Event"],
+      "description": "Entity type"
+    },
+    
+    "eventTitle": {
+      "type": "string",
+      "description": "Event name/title",
+      "minLength": 5,
+      "maxLength": 200
+    },
+    
+    "eventDescription": {
+      "type": "string",
+      "description": "Detailed event description",
+      "minLength": 10,
+      "maxLength": 5000
+    },
+    
+    "eventType": {
+      "type": "string",
+      "description": "Type of event",
+      "enum": [
+        "volunteer_day",
+        "workshop",
+        "training",
+        "conference",
+        "fundraiser",
+        "community_meeting",
+        "cleanup",
+        "relief_action",
+        "online_webinar",
+        "social_gathering",
+        "other"
+      ]
+    },
+    
+    "eventDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Event date (start date for multi-day events)"
+    },
+    
+    "eventTime": {
+      "type": "string",
+      "format": "time",
+      "description": "Event start time (HH:MM format)"
+    },
+    
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date (for multi-day events)"
+    },
+    
+    "endTime": {
+      "type": "string",
+      "format": "time",
+      "description": "End time"
+    },
+    
+    "duration": {
+      "type": "object",
+      "description": "Event duration",
+      "properties": {
+        "hours": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 59
+        }
+      }
+    },
+    
+    "status": {
+      "type": "string",
+      "enum": ["planned", "ongoing", "completed", "cancelled", "postponed"],
+      "description": "Event status"
+    },
+    
+    "eventOrganizer": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of organization or volunteer organizing event"
+    },
+    
+    "partners": {
+      "type": "array",
+      "description": "Co-organizing partners",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "location": {
+      "type": "object",
+      "description": "Event location details",
+      "properties": {
+        "venue": {
+          "type": "string",
+          "description": "Venue name"
+        },
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "virtual": {
+          "type": "boolean",
+          "description": "Whether event is virtual"
+        },
+        "hybrid": {
+          "type": "boolean",
+          "description": "Whether event is hybrid (in-person + virtual)"
+        },
+        "meetingLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "Zoom, Meet, or other meeting link"
+        }
+      }
+    },
+    
+    "registrationRequired": {
+      "type": "boolean",
+      "description": "Whether registration is required"
+    },
+    
+    "registrationDeadline": {
+      "type": "string",
+      "format": "date",
+      "description": "Registration deadline"
+    },
+    
+    "expectedAttendance": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Expected number of attendees"
+    },
+    
+    "maxAttendees": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum attendee capacity"
+    },
+    
+    "currentAttendees": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Current registered attendees"
+    },
+    
+    "participates": {
+      "type": "array",
+      "description": "Volunteers attending event",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "agenda": {
+      "type": "array",
+      "description": "Event agenda/schedule",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "format": "time"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
