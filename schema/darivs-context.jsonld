@@ -1,0 +1,187 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "darivs": "https://darivs.protocol/ontology/",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    
+    "id": "@id",
+    "type": "@type",
+    "version": "darivs:version",
+    
+    "Volunteer": "darivs:Volunteer",
+    "Organization": "darivs:Organization",
+    "Task": "darivs:Task",
+    "Event": "darivs:Event",
+    "ImpactMetric": "darivs:ImpactMetric",
+    
+    "volunteerProfile": {
+      "@id": "darivs:volunteerProfile",
+      "@type": "@id"
+    },
+    "organizationProfile": {
+      "@id": "darivs:organizationProfile",
+      "@type": "@id"
+    },
+    
+    "name": "schema:name",
+    "description": "schema:description",
+    "email": "schema:email",
+    "url": "schema:url",
+    "image": "schema:image",
+    
+    "volunteerId": "darivs:volunteerId",
+    "organizationId": "darivs:organizationId",
+    
+    "firstName": "schema:givenName",
+    "lastName": "schema:familyName",
+    "avatar": "schema:image",
+    
+    "skills": {
+      "@id": "darivs:skills",
+      "@container": "@set"
+    },
+    "skill": "darivs:skill",
+    "skillLevel": {
+      "@id": "darivs:skillLevel",
+      "@type": "xsd:string"
+    },
+    
+    "availability": {
+      "@id": "darivs:availability",
+      "@type": "@id"
+    },
+    "hoursPerWeek": {
+      "@id": "darivs:hoursPerWeek",
+      "@type": "xsd:integer"
+    },
+    "startDate": {
+      "@id": "schema:startDate",
+      "@type": "xsd:date"
+    },
+    "endDate": {
+      "@id": "schema:endDate",
+      "@type": "xsd:date"
+    },
+    
+    "languages": {
+      "@id": "darivs:languages",
+      "@container": "@set"
+    },
+    "country": "schema:addressCountry",
+    "city": "schema:addressLocality",
+    "region": "schema:addressRegion",
+    
+    "registrationNumber": "darivs:registrationNumber",
+    "taxId": "darivs:taxId",
+    "legalStatus": "darivs:legalStatus",
+    "founded": {
+      "@id": "schema:foundingDate",
+      "@type": "xsd:date"
+    },
+    "website": "schema:url",
+    "socialMedia": "darivs:socialMedia",
+    
+    "taskTitle": "schema:name",
+    "taskDescription": "schema:description",
+    "taskCategory": "darivs:taskCategory",
+    "skillsRequired": {
+      "@id": "darivs:skillsRequired",
+      "@container": "@set"
+    },
+    "taskStatus": "darivs:taskStatus",
+    "hoursRequired": {
+      "@id": "darivs:hoursRequired",
+      "@type": "xsd:integer"
+    },
+    "deadline": {
+      "@id": "schema:deadline",
+      "@type": "xsd:date"
+    },
+    "taskCreatedBy": {
+      "@id": "darivs:taskCreatedBy",
+      "@type": "@id"
+    },
+    
+    "eventTitle": "schema:name",
+    "eventDescription": "schema:description",
+    "eventType": "darivs:eventType",
+    "eventDate": {
+      "@id": "schema:startDate",
+      "@type": "xsd:date"
+    },
+    "eventTime": {
+      "@id": "schema:startTime",
+      "@type": "xsd:time"
+    },
+    "eventLocation": "schema:location",
+    "eventOrganizer": {
+      "@id": "darivs:eventOrganizer",
+      "@type": "@id"
+    },
+    "attendeeCount": {
+      "@id": "darivs:attendeeCount",
+      "@type": "xsd:integer"
+    },
+    
+    "impactType": "darivs:impactType",
+    "impactValue": {
+      "@id": "darivs:impactValue",
+      "@type": "xsd:number"
+    },
+    "impactUnit": "darivs:impactUnit",
+    "impactDate": {
+      "@id": "schema:date",
+      "@type": "xsd:date"
+    },
+    "verifiedBy": {
+      "@id": "darivs:verifiedBy",
+      "@type": "@id"
+    },
+    "verificationMethod": "darivs:verificationMethod",
+    
+    "participates": {
+      "@id": "darivs:participates",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "coordinates": {
+      "@id": "darivs:coordinates",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "organizes": {
+      "@id": "darivs:organizes",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "involves": {
+      "@id": "darivs:involves",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "recordedBy": {
+      "@id": "darivs:recordedBy",
+      "@type": "@id"
+    },
+    
+    "createdAt": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "updatedAt": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "verified": {
+      "@id": "darivs:verified",
+      "@type": "xsd:boolean"
+    },
+    "verificationDate": {
+      "@id": "darivs:verificationDate",
+      "@type": "xsd:dateTime"
+    }
+  }
+}
