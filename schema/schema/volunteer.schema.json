@@ -1,0 +1,269 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://darivs.protocol/schema/volunteer-v0.1.0",
+  "title": "DARIVS Volunteer Profile",
+  "description": "JSON-LD schema for volunteer profiles in community engagement platforms",
+  "type": "object",
+  
+  "required": [
+    "id",
+    "type",
+    "firstName",
+    "lastName",
+    "email",
+    "createdAt"
+  ],
+  
+  "properties": {
+    "@context": {
+      "type": "string",
+      "description": "Reference to DARIVS context",
+      "default": "https://darivs.protocol/schema/darivs-context.jsonld"
+    },
+    
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Unique identifier for volunteer (e.g., https://platform.org/volunteers/alice-123)"
+    },
+    
+    "type": {
+      "type": "string",
+      "enum": ["Volunteer"],
+      "description": "Entity type identifier"
+    },
+    
+    "firstName": {
+      "type": "string",
+      "description": "Volunteer's first name",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    
+    "lastName": {
+      "type": "string",
+      "description": "Volunteer's last name",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Volunteer's email address"
+    },
+    
+    "avatar": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to volunteer's profile picture"
+    },
+    
+    "bio": {
+      "type": "string",
+      "description": "Short biography or about text",
+      "maxLength": 500
+    },
+    
+    "skills": {
+      "type": "array",
+      "description": "Array of volunteer's skills with proficiency levels",
+      "items": {
+        "type": "object",
+        "required": ["skill"],
+        "properties": {
+          "skill": {
+            "type": "string",
+            "description": "Skill name (e.g., 'Python', 'Teaching', 'First Aid')"
+          },
+          "skillLevel": {
+            "type": "string",
+            "enum": ["beginner", "intermediate", "advanced", "expert"],
+            "description": "Proficiency level"
+          },
+          "yearsOfExperience": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Years of experience with this skill"
+          }
+        }
+      }
+    },
+    
+    "languages": {
+      "type": "array",
+      "description": "Languages spoken by volunteer",
+      "items": {
+        "type": "object",
+        "required": ["language"],
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Language code (ISO 639-1, e.g., 'en', 'uk', 'fr')"
+          },
+          "proficiency": {
+            "type": "string",
+            "enum": ["native", "fluent", "conversational", "basic"],
+            "description": "Language proficiency level"
+          }
+        }
+      }
+    },
+    
+    "availability": {
+      "type": "object",
+      "description": "Volunteer's availability information",
+      "properties": {
+        "hoursPerWeek": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 168,
+          "description": "Average hours per week volunteer can contribute"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when volunteer is available to start"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when volunteer availability ends (optional)"
+        },
+        "recurring": {
+          "type": "array",
+          "description": "Recurring availability patterns",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dayOfWeek": {
+                "type": "string",
+                "enum": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+              },
+              "timeSlot": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "time"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "time"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    
+    "location": {
+      "type": "object",
+      "description": "Volunteer's location information",
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country code (ISO 3166-1 alpha-2, e.g., 'UA', 'US')"
+        },
+        "region": {
+          "type": "string",
+          "description": "Region or state name"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "Latitude coordinate (if volunteer allows location sharing)"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "Longitude coordinate (if volunteer allows location sharing)"
+        }
+      }
+    },
+    
+    "participates": {
+      "type": "array",
+      "description": "Tasks and events volunteer participates in",
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "description": "URI reference to Task or Event"
+      }
+    },
+    
+    "coordinates": {
+      "type": "array",
+      "description": "Tasks and events volunteer coordinates",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "socialMedia": {
+      "type": "object",
+      "description": "Social media profiles",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "preferences": {
+      "type": "object",
+      "description": "Volunteer preferences",
+      "properties": {
+        "taskCategories": {
+          "type": "array",
+          "description": "Preferred task categories",
+          "items": {"type": "string"}
+        },
+        "remoteFriendly": {
+          "type": "boolean",
+          "description": "Whether volunteer prefers remote tasks"
+        },
+        "teamSize": {
+          "type": "string",
+          "enum": ["solo", "small", "medium", "large"],
+          "description": "Preferred team size"
+        },
+        "impactFocus": {
+          "type": "array",
+          "description": "Areas of impact volunteer cares about",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of volunteer profile creation"
+    },
+    
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of last profile update"
+    },
+    
+    "verified": {
+      "type": "boolean",
+      "description": "Whether volunteer profile is verified",
+      "default": false
+    },
+    
+    "verificationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when profile was verified"
+    }
+  },
+  
+  "additionalProperties": false
+}
