@@ -1,0 +1,118 @@
+{
+  "@context": "https://darivs.protocol/schema/darivs-context.jsonld",
+  "id": "https://darivs.platform/orgs/help-ukraine-kyiv",
+  "type": "Organization",
+  
+  "name": "Help Ukraine Foundation",
+  "shortName": "Help UA",
+  "description": "Help Ukraine Foundation is a nonprofit organization dedicated to supporting refugees, internally displaced persons, and vulnerable communities affected by the conflict. We provide humanitarian aid, education, medical services, and community support programs.",
+  
+  "email": "info@helpukraine.org",
+  "phone": "+380443332211",
+  "website": "https://helpukraine.org",
+  "image": "https://helpukraine.org/logo.png",
+  
+  "legalStatus": "npo",
+  "registrationNumber": "44874584",
+  "taxId": "44874584",
+  "country": "UA",
+  
+  "location": {
+    "country": "UA",
+    "region": "Kyiv",
+    "city": "Kyiv",
+    "address": "15 Independence Avenue, Suite 300",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  },
+  
+  "founded": "2022-03-15",
+  
+  "mission": "To provide comprehensive humanitarian support and recovery assistance to communities affected by conflict, with a focus on refugees, IDPs, and vulnerable populations.",
+  
+  "vision": "A Ukraine where every person has access to basic services, education, and the opportunity to rebuild their lives with dignity.",
+  
+  "focusAreas": [
+    "emergency_relief",
+    "education",
+    "health",
+    "social_services"
+  ],
+  
+  "staffCount": 45,
+  "volunteerCount": 280,
+  
+  "annualBudget": {
+    "amount": 250000,
+    "currency": "EUR",
+    "year": 2025
+  },
+  
+  "socialMedia": {
+    "facebook": "https://facebook.com/helpukraine",
+    "twitter": "https://twitter.com/helpukraine",
+    "instagram": "https://instagram.com/helpukraine",
+    "linkedin": "https://linkedin.com/company/help-ukraine"
+  },
+  
+  "coordinates": [
+    "https://helpua.org/volunteers/maria-shevchenko",
+    "https://helpua.org/volunteers/ivan-petrenko"
+  ],
+  
+  "organizes": [
+    "https://helpua.org/tasks/english-tutoring-refugees-2026",
+    "https://helpua.org/tasks/medical-screening-program",
+    "https://helpua.org/events/volunteer-orientation-july-2026"
+  ],
+  
+  "involves": [
+    "https://helpua.org/volunteers/alice-kovalenko-ua",
+    "https://helpua.org/volunteers/bob-johnson-us",
+    "https://helpua.org/volunteers/diana-mueller-de"
+  ],
+  
+  "partnerships": [
+    {
+      "organizationId": "https://redcross.ua/org/red-cross-ukraine",
+      "partnershipType": "humanitarian_cooperation",
+      "startDate": "2022-04-01"
+    },
+    {
+      "organizationId": "https://unicef.org/ukraine",
+      "partnershipType": "education_support",
+      "startDate": "2022-06-15"
+    }
+  ],
+  
+  "certifications": [
+    {
+      "name": "ISO 9001 Quality Management",
+      "issuer": "International Organization for Standardization",
+      "issuedDate": "2023-06-01",
+      "expiryDate": "2026-06-01"
+    },
+    {
+      "name": "GDPR Compliance Certified",
+      "issuer": "European Data Protection Board",
+      "issuedDate": "2024-01-15"
+    }
+  ],
+  
+  "policies": {
+    "gdprCompliant": true,
+    "transparencyLevel": "public",
+    "volunteerBenefits": [
+      "Training and development",
+      "Insurance coverage",
+      "Volunteer appreciation events",
+      "Mentorship programs"
+    ]
+  },
+  
+  "createdAt": "2022-03-15T12:00:00Z",
+  "updatedAt": "2026-06-25T14:20:00Z",
+  "verified": true,
+  "verificationDate": "2023-06-01T10:00:00Z",
+  "verificationMethod": "government_records"
+}
