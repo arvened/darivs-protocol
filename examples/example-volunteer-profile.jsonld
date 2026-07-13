@@ -1,0 +1,125 @@
+{
+  "@context": "https://darivs.protocol/schema/darivs-context.jsonld",
+  "id": "https://helpua.org/volunteers/alice-kovalenko-ua",
+  "type": "Volunteer",
+  
+  "firstName": "Alice",
+  "lastName": "Kovalenko",
+  "email": "alice.kovalenko@example.ua",
+  "avatar": "https://helpua.org/avatars/alice-kovalenko.jpg",
+  
+  "bio": "English teacher with 8 years of experience. Passionate about helping refugees learn English and integrate into their new communities. Fluent in Ukrainian, English, and basic Russian.",
+  
+  "skills": [
+    {
+      "skill": "English Language Teaching",
+      "skillLevel": "expert",
+      "yearsOfExperience": 8
+    },
+    {
+      "skill": "Curriculum Development",
+      "skillLevel": "advanced",
+      "yearsOfExperience": 5
+    },
+    {
+      "skill": "Student Counseling",
+      "skillLevel": "intermediate",
+      "yearsOfExperience": 3
+    },
+    {
+      "skill": "Online Teaching (Zoom/Skype)",
+      "skillLevel": "expert",
+      "yearsOfExperience": 3
+    },
+    {
+      "skill": "Translation (English-Ukrainian)",
+      "skillLevel": "advanced",
+      "yearsOfExperience": 6
+    }
+  ],
+  
+  "languages": [
+    {
+      "language": "uk",
+      "proficiency": "native"
+    },
+    {
+      "language": "en",
+      "proficiency": "fluent"
+    },
+    {
+      "language": "ru",
+      "proficiency": "conversational"
+    }
+  ],
+  
+  "availability": {
+    "hoursPerWeek": 12,
+    "startDate": "2026-06-01",
+    "recurring": [
+      {
+        "dayOfWeek": "Monday",
+        "timeSlot": {
+          "start": "18:00",
+          "end": "21:00"
+        }
+      },
+      {
+        "dayOfWeek": "Wednesday",
+        "timeSlot": {
+          "start": "18:00",
+          "end": "21:00"
+        }
+      },
+      {
+        "dayOfWeek": "Saturday",
+        "timeSlot": {
+          "start": "10:00",
+          "end": "14:00"
+        }
+      }
+    ]
+  },
+  
+  "location": {
+    "country": "UA",
+    "region": "Kyiv",
+    "city": "Kyiv",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  },
+  
+  "participates": [
+    "https://helpua.org/tasks/english-tutoring-refugees-2026",
+    "https://helpua.org/events/language-exchange-july-2026"
+  ],
+  
+  "coordinates": [
+    "https://helpua.org/tasks/english-teaching-program-lead"
+  ],
+  
+  "socialMedia": {
+    "linkedin": "https://linkedin.com/in/alice-kovalenko",
+    "facebook": "https://facebook.com/alice.kovalenko"
+  },
+  
+  "preferences": {
+    "taskCategories": [
+      "education",
+      "mentoring",
+      "translation"
+    ],
+    "remoteFriendly": true,
+    "teamSize": "small",
+    "impactFocus": [
+      "refugee support",
+      "education access",
+      "language skills"
+    ]
+  },
+  
+  "createdAt": "2026-05-15T09:30:00Z",
+  "updatedAt": "2026-06-25T14:20:00Z",
+  "verified": true,
+  "verificationDate": "2026-06-01T10:00:00Z"
+}
