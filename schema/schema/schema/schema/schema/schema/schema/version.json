@@ -1,0 +1,197 @@
+{
+  "protocol": "DARIVS",
+  "version": "0.1.0-alpha",
+  "status": "development",
+  "releaseDate": "2026-07-21",
+  "lastUpdated": "2026-06-07",
+  
+  "description": "Open standard JSON-LD for volunteer and charitable impact verification",
+  
+  "entities": {
+    "Volunteer": {
+      "version": "0.1.0",
+      "schema": "volunteer.schema.json",
+      "status": "draft",
+      "properties": 28,
+      "description": "Individual volunteer profile"
+    },
+    "Organization": {
+      "version": "0.1.0",
+      "schema": "organization.schema.json",
+      "status": "draft",
+      "properties": 33,
+      "description": "Nonprofit organization or institution"
+    },
+    "Task": {
+      "version": "0.1.0",
+      "schema": "task.schema.json",
+      "status": "draft",
+      "properties": 30,
+      "description": "Volunteer task or project"
+    },
+    "Event": {
+      "version": "0.1.0",
+      "schema": "event.schema.json",
+      "status": "draft",
+      "properties": 41,
+      "description": "Volunteer event or gathering"
+    },
+    "ImpactMetric": {
+      "version": "0.1.0",
+      "schema": "impact.schema.json",
+      "status": "draft",
+      "properties": 36,
+      "description": "Impact measurement and verification record"
+    }
+  },
+  
+  "context": {
+    "file": "darivs-context.jsonld",
+    "version": "0.1.0",
+    "namespace": "https://darivs.protocol/ontology/",
+    "baseNamespaces": {
+      "schema": "https://schema.org/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  },
+  
+  "relationships": [
+    {
+      "source": "Volunteer",
+      "target": "Task",
+      "relation": "participates",
+      "cardinality": "many-to-many"
+    },
+    {
+      "source": "Volunteer",
+      "target": "Event",
+      "relation": "participates",
+      "cardinality": "many-to-many"
+    },
+    {
+      "source": "Volunteer",
+      "target": "Task",
+      "relation": "coordinates",
+      "cardinality": "one-to-many"
+    },
+    {
+      "source": "Volunteer",
+      "target": "ImpactMetric",
+      "relation": "generates",
+      "cardinality": "one-to-many"
+    },
+    {
+      "source": "Organization",
+      "target": "Task",
+      "relation": "organizes",
+      "cardinality": "one-to-many"
+    },
+    {
+      "source": "Organization",
+      "target": "Event",
+      "relation": "organizes",
+      "cardinality": "one-to-many"
+    },
+    {
+      "source": "Organization",
+      "target": "Volunteer",
+      "relation": "involves",
+      "cardinality": "one-to-many"
+    },
+    {
+      "source": "Task",
+      "target": "ImpactMetric",
+      "relation": "generates",
+      "cardinality": "one-to-many"
+    },
+    {
+      "source": "Event",
+      "target": "ImpactMetric",
+      "relation": "generates",
+      "cardinality": "one-to-many"
+    }
+  ],
+  
+  "compatibility": {
+    "jsonSchema": "draft-07",
+    "jsonld": "1.1",
+    "formats": ["JSON", "JSON-LD", "Turtle", "RDF/XML"]
+  },
+  
+  "roadmap": {
+    "v0.1.0": {
+      "date": "2026-08-25",
+      "features": [
+        "Core 5 entities (Volunteer, Organization, Task, Event, ImpactMetric)",
+        "JSON-LD context with schema.org integration",
+        "Validation schemas",
+        "Basic relationship definitions",
+        "Documentation and examples"
+      ],
+      "status": "in-progress"
+    },
+    "v0.2.0": {
+      "date": "2026-10-31",
+      "features": [
+        "Cryptographic signing and verification",
+        "Extended entity types",
+        "Complex relationship types",
+        "Advanced validation rules",
+        "API specifications"
+      ],
+      "status": "planned"
+    },
+    "v1.0.0": {
+      "date": "2027-06-30",
+      "features": [
+        "Production-ready specification",
+        "Formal governance model",
+        "Official registry",
+        "Extended SDKs (Go, Rust, Ruby)",
+        "Formal standardization"
+      ],
+      "status": "planned"
+    }
+  },
+  
+  "maintainers": [
+    {
+      "name": "Eduard Arbitman",
+      "email": "hello@arvend.io",
+      "role": "Protocol Designer",
+      "organization": "ARVEN Agency"
+    }
+  ],
+  
+  "license": "MIT",
+  "licenseUrl": "https://opensource.org/licenses/MIT",
+  
+  "repository": {
+    "url": "https://github.com/arvened/darivs-protocol",
+    "type": "git",
+    "branch": "main"
+  },
+  
+  "funding": {
+    "grantor": "NLnet Foundation",
+    "program": "NGI Zero Commons Fund",
+    "grantId": "2026-06-4e7",
+    "amount": 35000,
+    "currency": "EUR"
+  },
+  
+  "changelog": {
+    "0.1.0-alpha": {
+      "date": "2026-07-21",
+      "changes": [
+        "Initial draft of core entities",
+        "JSON-LD context definition",
+        "Schema design for Volunteer, Organization, Task, Event, ImpactMetric",
+        "Basic validation rules",
+        "Examples and documentation"
+      ]
+    }
+  }
+}
