@@ -1,0 +1,294 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://darivs.protocol/schema/task-v0.1.0",
+  "title": "DARIVS Task/Project",
+  "description": "JSON-LD schema for volunteer tasks and projects",
+  "type": "object",
+  
+  "required": [
+    "id",
+    "type",
+    "taskTitle",
+    "taskDescription",
+    "taskCreatedBy",
+    "createdAt"
+  ],
+  
+  "properties": {
+    "@context": {
+      "type": "string",
+      "description": "Reference to DARIVS context"
+    },
+    
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Unique task identifier"
+    },
+    
+    "type": {
+      "type": "string",
+      "enum": ["Task"],
+      "description": "Entity type"
+    },
+    
+    "taskTitle": {
+      "type": "string",
+      "description": "Task title",
+      "minLength": 5,
+      "maxLength": 200
+    },
+    
+    "taskDescription": {
+      "type": "string",
+      "description": "Detailed task description",
+      "minLength": 10,
+      "maxLength": 5000
+    },
+    
+    "taskCategory": {
+      "type": "string",
+      "description": "Task category/type",
+      "enum": [
+        "emergency_response",
+        "education",
+        "mentoring",
+        "technical",
+        "administrative",
+        "community_outreach",
+        "fundraising",
+        "research",
+        "translation",
+        "creative",
+        "physical_work",
+        "other"
+      ]
+    },
+    
+    "taskStatus": {
+      "type": "string",
+      "enum": ["open", "in_progress", "on_hold", "completed", "cancelled"],
+      "description": "Current task status"
+    },
+    
+    "skillsRequired": {
+      "type": "array",
+      "description": "Skills needed for this task",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string"
+          },
+          "minimumLevel": {
+            "type": "string",
+            "enum": ["beginner", "intermediate", "advanced", "expert"]
+          },
+          "required": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      }
+    },
+    
+    "hoursRequired": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Estimated total hours needed"
+    },
+    
+    "urgency": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "Task urgency level"
+    },
+    
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Task start date"
+    },
+    
+    "deadline": {
+      "type": "string",
+      "format": "date",
+      "description": "Task deadline"
+    },
+    
+    "location": {
+      "type": "object",
+      "description": "Where task takes place",
+      "properties": {
+        "remote": {
+          "type": "boolean",
+          "description": "Whether task can be done remotely"
+        },
+        "onsite": {
+          "type": "boolean",
+          "description": "Whether task requires on-site presence"
+        },
+        "hybrid": {
+          "type": "boolean",
+          "description": "Whether task allows hybrid work"
+        },
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      }
+    },
+    
+    "taskCreatedBy": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of volunteer or organization who created task"
+    },
+    
+    "organization": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of organization task belongs to"
+    },
+    
+    "participates": {
+      "type": "array",
+      "description": "Volunteers participating in this task",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "maxVolunteers": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum volunteers needed"
+    },
+    
+    "currentVolunteers": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Current number of volunteers"
+    },
+    
+    "deliverables": {
+      "type": "array",
+      "description": "Expected deliverables/outcomes",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "completed": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    },
+    
+    "resources": {
+      "type": "array",
+      "description": "Resources, materials, or tools provided",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    
+    "communicationChannel": {
+      "type": "object",
+      "description": "How volunteers communicate",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["slack", "discord", "email", "whatsapp", "telegram", "zoom", "other"]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    
+    "mentorship": {
+      "type": "boolean",
+      "description": "Whether task includes mentorship/training"
+    },
+    
+    "impactMetrics": {
+      "type": "array",
+      "description": "How impact of task will be measured",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string"
+          },
+          "target": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    
+    "tags": {
+      "type": "array",
+      "description": "Categorization tags",
+      "items": {
+        "type": "string"
+      }
+    },
+    
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    
+    "verified": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  
+  "additionalProperties": false
+}
