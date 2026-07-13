@@ -1,0 +1,271 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://darivs.protocol/schema/organization-v0.1.0",
+  "title": "DARIVS Organization Profile",
+  "description": "JSON-LD schema for nonprofit organizations and institutions",
+  "type": "object",
+  
+  "required": [
+    "id",
+    "type",
+    "name",
+    "email",
+    "country",
+    "createdAt"
+  ],
+  
+  "properties": {
+    "@context": {
+      "type": "string",
+      "description": "Reference to DARIVS context"
+    },
+    
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Unique identifier (e.g., https://platform.org/organizations/red-cross-ua)"
+    },
+    
+    "type": {
+      "type": "string",
+      "enum": ["Organization"],
+      "description": "Entity type"
+    },
+    
+    "name": {
+      "type": "string",
+      "description": "Organization full legal name",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    
+    "shortName": {
+      "type": "string",
+      "description": "Short or informal name/acronym"
+    },
+    
+    "description": {
+      "type": "string",
+      "description": "Detailed organization description",
+      "maxLength": 2000
+    },
+    
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Organization contact email"
+    },
+    
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Organization website URL"
+    },
+    
+    "image": {
+      "type": "string",
+      "format": "uri",
+      "description": "Logo or organization image URL"
+    },
+    
+    "legalStatus": {
+      "type": "string",
+      "enum": ["npo", "ngo", "charity", "cooperative", "social_enterprise", "government", "other"],
+      "description": "Legal status of organization"
+    },
+    
+    "registrationNumber": {
+      "type": "string",
+      "description": "Government registration number (e.g., ЄДРПОУ for Ukraine)"
+    },
+    
+    "taxId": {
+      "type": "string",
+      "description": "Tax identification number"
+    },
+    
+    "country": {
+      "type": "string",
+      "description": "Country code (ISO 3166-1 alpha-2)"
+    },
+    
+    "location": {
+      "type": "object",
+      "description": "Organization's main location",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      }
+    },
+    
+    "founded": {
+      "type": "string",
+      "format": "date",
+      "description": "Date organization was founded"
+    },
+    
+    "mission": {
+      "type": "string",
+      "description": "Organization's mission statement",
+      "maxLength": 1000
+    },
+    
+    "vision": {
+      "type": "string",
+      "description": "Organization's vision",
+      "maxLength": 1000
+    },
+    
+    "focusAreas": {
+      "type": "array",
+      "description": "Areas of focus/impact",
+      "items": {
+        "type": "string"
+      }
+    },
+    
+    "staffCount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of paid staff members"
+    },
+    
+    "volunteerCount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Approximate number of active volunteers"
+    },
+    
+    "annualBudget": {
+      "type": "object",
+      "description": "Annual budget information",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string",
+          "description": "ISO 4217 currency code"
+        },
+        "year": {
+          "type": "integer"
+        }
+      }
+    },
+    
+    "socialMedia": {
+      "type": "object",
+      "description": "Social media profiles",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "coordinates": {
+      "type": "array",
+      "description": "Volunteers who coordinate for organization",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "organizes": {
+      "type": "array",
+      "description": "Tasks and events organized",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "involves": {
+      "type": "array",
+      "description": "Volunteers involved with organization",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    
+    "partnerships": {
+      "type": "array",
+      "description": "Partner organizations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "organizationId": {
+            "type": "string",
+            "format": "uri"
+          },
+          "partnershipType": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    
+    "certifications": {
+      "type": "array",
+      "description": "Relevant certifications or accreditations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "issuer": {
+            "type": "string"
+          },
+          "issuedDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    
+    "policies": {
+      "type": "object",
+      "description": "Organization policies",
+      "properties": {
+        "gdprCompliant": {
+          "type": "boolean"
+        },
+        "transparencyLevel": {
+          "type": "string",
+          "enum": ["public", "members_only", "
