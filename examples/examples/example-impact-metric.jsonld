@@ -1,0 +1,87 @@
+{
+  "@context": "https://darivs.protocol/schema/darivs-context.jsonld",
+  "id": "https://helpua.org/impact/2026-june-tutoring-alice-batch-1",
+  "type": "ImpactMetric",
+  
+  "impactType": "people_trained",
+  "impactValue": 12,
+  "impactUnit": "people",
+  "currency": "EUR",
+  
+  "description": "English language training and mentorship provided to 12 refugee and IDP individuals during June 2026. Training covered conversational English, workplace communication, job interview preparation, and English for daily activities. Average improvement of 2 proficiency levels per participant.",
+  
+  "impactDate": "2026-06-30",
+  "startDate": "2026-06-01",
+  "endDate": "2026-06-30",
+  
+  "impactArea": {
+    "country": "UA",
+    "region": "Kyiv",
+    "city": "Kyiv"
+  },
+  
+  "volunteer": "https://helpua.org/volunteers/alice-kovalenko-ua",
+  "organization": "https://helpua.org/orgs/help-ukraine-kyiv",
+  "task": "https://helpua.org/tasks/english-tutoring-refugees-2026",
+  
+  "recordedBy": "https://helpua.org/volunteers/alice-kovalenko-ua",
+  "verifiedBy": "https://helpua.org/volunteers/maria-shevchenko",
+  
+  "verificationMethod": "coordinator_confirmed",
+  
+  "evidenceLinks": [
+    {
+      "url": "https://helpua.org/documents/training-attendance-june-2026.pdf",
+      "type": "document",
+      "description": "Attendance sheet with participant signatures"
+    },
+    {
+      "url": "https://helpua.org/images/training-photos-june-2026/",
+      "type": "photo",
+      "description": "Photos from training sessions"
+    },
+    {
+      "url": "https://helpua.org/documents/proficiency-assessments-june-2026.pdf",
+      "type": "document",
+      "description": "Pre- and post-training proficiency level assessments"
+    }
+  ],
+  
+  "beneficiaries": [
+    {
+      "name": "Ukrainian Refugee Families",
+      "type": "group",
+      "count": 8
+    },
+    {
+      "name": "Syrian Refugee Families",
+      "type": "group",
+      "count": 4
+    }
+  ],
+  
+  "sdgAlignment": [
+    4,
+    10,
+    16
+  ],
+  
+  "quantified": true,
+  "confidence": "high",
+  
+  "tags": [
+    "education",
+    "english-language",
+    "refugee-support",
+    "training",
+    "june-2026"
+  ],
+  
+  "notes": "Participants showed exceptional engagement and improvement. Several participants expressed interest in continuing advanced English training. Recommend follow-up program for August 2026.",
+  
+  "createdAt": "2026-07-01T18:00:00Z",
+  "updatedAt": "2026-07-02T10:30:00Z",
+  
+  "verified": true,
+  "verificationDate": "2026-07-02T09:00:00Z"
+}
