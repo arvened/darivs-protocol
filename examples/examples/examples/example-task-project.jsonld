@@ -1,0 +1,145 @@
+{
+  "@context": "https://darivs.protocol/schema/darivs-context.jsonld",
+  "id": "https://helpua.org/tasks/english-tutoring-refugees-2026",
+  "type": "Task",
+  
+  "taskTitle": "English Language Tutoring for Refugee Families",
+  "taskDescription": "Help refugee families and individuals learn English for employment, education, and daily integration. This is an intensive tutoring program focusing on conversational English, job interview preparation, and professional communication skills. Suitable for learners at beginner to intermediate levels. Sessions can be conducted online or in-person at our Kyiv center.",
+  
+  "taskCategory": "education",
+  "taskStatus": "open",
+  
+  "skillsRequired": [
+    {
+      "skill": "English Language Proficiency",
+      "minimumLevel": "advanced",
+      "required": true
+    },
+    {
+      "skill": "Teaching Experience",
+      "minimumLevel": "intermediate",
+      "required": false
+    },
+    {
+      "skill": "Cultural Sensitivity",
+      "minimumLevel": "intermediate",
+      "required": true
+    },
+    {
+      "skill": "Patience and Communication",
+      "minimumLevel": "intermediate",
+      "required": true
+    }
+  ],
+  
+  "hoursRequired": 120,
+  "urgency": "high",
+  
+  "startDate": "2026-07-01",
+  "deadline": "2026-12-31",
+  
+  "location": {
+    "remote": true,
+    "onsite": true,
+    "hybrid": true,
+    "city": "Kyiv",
+    "country": "UA"
+  },
+  
+  "organization": "https://helpua.org/orgs/help-ukraine-kyiv",
+  "taskCreatedBy": "https://helpua.org/volunteers/maria-shevchenko",
+  
+  "participates": [
+    "https://helpua.org/volunteers/alice-kovalenko-ua",
+    "https://helpua.org/volunteers/bob-johnson-us"
+  ],
+  
+  "maxVolunteers": 8,
+  "currentVolunteers": 2,
+  
+  "deliverables": [
+    {
+      "name": "Initial Assessment and Learning Plan",
+      "description": "Comprehensive assessment of each student's level and personalized learning objectives",
+      "dueDate": "2026-07-15",
+      "completed": false
+    },
+    {
+      "name": "Weekly Lesson Plans",
+      "description": "Structured lesson plans for each week covering vocabulary, grammar, and conversation",
+      "dueDate": "2026-12-31",
+      "completed": false
+    },
+    {
+      "name": "Progress Reports",
+      "description": "Monthly progress reports for each student submitted to organization",
+      "dueDate": "2026-12-31",
+      "completed": false
+    },
+    {
+      "name": "Job Interview Preparation Materials",
+      "description": "Custom interview prep materials and mock interview sessions",
+      "dueDate": "2026-11-30",
+      "completed": false
+    }
+  ],
+  
+  "resources": [
+    {
+      "name": "English Learning Platform",
+      "description": "Access to Duolingo Business or similar platform with curriculum materials",
+      "url": "https://business.duolingo.com"
+    },
+    {
+      "name": "Interview Preparation Guide",
+      "description": "Organization-provided guide for job interview English",
+      "url": "https://helpua.org/resources/interview-guide"
+    },
+    {
+      "name": "Zoom Meeting Setup",
+      "description": "Organization provides Zoom Pro account for online sessions"
+    }
+  ],
+  
+  "communicationChannel": {
+    "type": "slack",
+    "url": "https://helpukraine.slack.com/archives/english-tutoring"
+  },
+  
+  "mentorship": true,
+  
+  "impactMetrics": [
+    {
+      "metric": "Students Served",
+      "target": 20,
+      "unit": "people"
+    },
+    {
+      "metric": "Hours of Instruction",
+      "target": 120,
+      "unit": "hours"
+    },
+    {
+      "metric": "Job Placements",
+      "target": 5,
+      "unit": "people"
+    },
+    {
+      "metric": "Student Proficiency Improvement",
+      "target": 80,
+      "unit": "percent"
+    }
+  ],
+  
+  "tags": [
+    "education",
+    "english-language",
+    "refugee-support",
+    "high-priority",
+    "kyiv"
+  ],
+  
+  "createdAt": "2026-06-15T10:30:00Z",
+  "updatedAt": "2026-06-25T14:20:00Z",
+  "verified": true
+}
