@@ -1,10 +1,4 @@
-# 📝 FILE 9: `README.md`
 
-**Путь:** `README.md`
-
-**Скопируй этот текст:**
-
-```markdown
 # DARIVS PROTOCOL
 
 **Open standard for volunteer & charitable impact verification**
