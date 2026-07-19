@@ -1,0 +1,245 @@
+# 🚀 PHASE 3: DARIVS Protocol - ФАЙЛ 6
+
+## 📤 ФАЙЛ 6: `political-operation.jsonld`
+
+**Репо:** github.com/arvened/darivs-protocol
+
+---
+
+### ✅ ШАГ 1: СОЗДАЙ НОВЫЙ ФАЙЛ
+
+1. Нажми **"Add file"** (иконка +)
+2. Выбери **"Create new file"**
+
+---
+
+### ✅ ШАГ 2: ИМЯ ФАЙЛА
+
+В поле **"Name your file"** введи:
+```
+political-operation.jsonld
+```
+
+---
+
+### ✅ ШАГ 3: СКОПИРУЙ КОД
+
+Весь текст ниже — вставь в поле:
+
+```jsonld
+{
+  "@context": {
+    "@version": 1.1,
+    "darivs": "https://darivs.org/schema/",
+    "schema": "https://schema.org/",
+    "dc": "https://purl.org/dc/elements/1.1/",
+    
+    "PoliticalOperation": "darivs:PoliticalOperation",
+    "operationId": "darivs:operationId",
+    "operationType": "darivs:operationType",
+    "startDate": "darivs:startDate",
+    "endDate": "darivs:endDate",
+    "targetEntity": "darivs:targetEntity",
+    "tactics": "darivs:tactics",
+    "techniques": "darivs:techniques",
+    "procedures": "darivs:procedures",
+    "stateResources": "darivs:stateResources"
+  },
+  
+  "@type": "PoliticalOperation",
+  "@id": "https://darivs.org/operations/fedorov-campaign-2026",
+  
+  "operationId": "op_fedorov_2026_08",
+  "operationType": [
+    "AMPLIFICATION",
+    "CIB",
+    "FRAME_CONTROL",
+    "NARRATIVE_CONSTRUCTION"
+  ],
+  "classification": "state_political_operation",
+  
+  "targetEntity": {
+    "@type": "schema:Person",
+    "name": "Volodymyr Fedorov",
+    "role": "Political Candidate",
+    "targetType": "amplification"
+  },
+  
+  "period": {
+    "startDate": "2026-01-15",
+    "endDate": "2026-08-11",
+    "duration": "210 days"
+  },
+  
+  "tactics": [
+    {
+      "@type": "Tactic",
+      "name": "OSINT",
+      "description": "Audience profiling via social data collection",
+      "techniques": ["SOCMINT", "WEBINT", "GEOINT"]
+    },
+    {
+      "@type": "Tactic",
+      "name": "Segmentation",
+      "description": "Psychographic targeting and behavioral microtargeting",
+      "techniques": ["OCEAN", "RFM", "BMT", "DMP"]
+    },
+    {
+      "@type": "Tactic",
+      "name": "Content Generation",
+      "description": "Automated and synthetic content creation",
+      "techniques": ["LLM", "NLP", "NLG", "GAN"]
+    },
+    {
+      "@type": "Tactic",
+      "name": "Amplification",
+      "description": "Coordinated inauthentic behavior to boost reach",
+      "techniques": ["CIB", "Bot Networks", "Fake Engagement"]
+    },
+    {
+      "@type": "Tactic",
+      "name": "Frame Control",
+      "description": "Controlling narrative and political framing",
+      "techniques": ["StratCom", "Message Discipline", "Narrative Control"]
+    }
+  ],
+  
+  "techniques": [
+    "Coordinated Inauthentic Behavior (47 accounts)",
+    "Automated Posting (10+ posts/day per account)",
+    "Content Duplication (86% identical or near-identical)",
+    "Hashtag Coordination (#Fedorov, #TechLeader, #ModernUkraine)",
+    "Bot Account Creation (accounts created Jan 15-25)",
+    "Engagement Manipulation (1000+ engagement on low-follower accounts)",
+    "Influencer Amplification (5+ KOL accounts spreading content)",
+    "Geographic Targeting (posts concentrated in major cities)",
+    "Psychological Priming (fear of 'old system', hope for 'modern Ukraine')",
+    "Narrative Seeding (consistent frame across platforms)"
+  ],
+  
+  "procedures": [
+    {
+      "@type": "Procedure",
+      "step": 1,
+      "name": "Audience Analysis",
+      "description": "OSINT collection on target population",
+      "timeline": "2026-01-10 to 2026-01-14"
+    },
+    {
+      "@type": "Procedure",
+      "step": 2,
+      "name": "Account Creation",
+      "description": "Mass creation of bot and fake accounts",
+      "timeline": "2026-01-15 to 2026-01-25"
+    },
+    {
+      "@type": "Procedure",
+      "step": 3,
+      "name": "Content Seeding",
+      "description": "Initial message distribution across networks",
+      "timeline": "2026-01-26 to 2026-02-15"
+    },
+    {
+      "@type": "Procedure",
+      "step": 4,
+      "name": "Amplification Phase",
+      "description": "Coordinated reposting and engagement boosting",
+      "timeline": "2026-02-16 onwards"
+    },
+    {
+      "@type": "Procedure",
+      "step": 5,
+      "name": "Adaptation & Refinement",
+      "description": "Message testing and optimization based on engagement",
+      "timeline": "Continuous"
+    }
+  ],
+  
+  "stateResources": {
+    "likely": true,
+    "indicators": [
+      "Scale (47+ accounts across platforms)",
+      "Coordination (synchronized posting times)",
+      "Persistence (continuous operation 7+ months)",
+      "Resource availability (professional messaging, media buying)",
+      "Rapid response capability (adaptation to criticism within hours)",
+      "Access to state media (coordination with traditional media)",
+      "Legal protection (no account suspensions despite TOS violations)"
+    ],
+    "assessment": "Medium-to-High probability of state resources or state-sanctioned operation"
+  },
+  
+  "infrastructure": {
+    "platforms": [
+      "Facebook",
+      "Instagram",
+      "Twitter/X",
+      "TikTok",
+      "YouTube"
+    ],
+    "accountsInvolved": 47,
+    "estimatedCost": {
+      "lowEstimate": 50000,
+      "highEstimate": 500000,
+      "currency": "USD",
+      "rationale": "Bot network infrastructure, content creation, media buying, possible influencer payments"
+    }
+  },
+  
+  "countermeasures": [
+    {
+      "@type": "Countermeasure",
+      "type": "Detection",
+      "action": "Monitor for coordinated account behavior",
+      "platform": "All social media"
+    },
+    {
+      "@type": "Countermeasure",
+      "type": "Mitigation",
+      "action": "Flag and deprioritize content from CIB clusters",
+      "effect": "Reduce visibility of coordinated inauthentic content"
+    },
+    {
+      "@type": "Countermeasure",
+      "type": "Attribution",
+      "action": "Investigate funding and command structure",
+      "responsible": "Election Commission, Law Enforcement"
+    },
+    {
+      "@type": "Countermeasure",
+      "type": "Transparency",
+      "action": "Public disclosure of findings",
+      "audience": "Media, Public, Election Observers"
+    }
+  ],
+  
+  "assessment": {
+    "assessment": "This operation represents a coordinated political campaign leveraging modern information warfare tools. The use of OSINT for audience profiling, automated content generation, and coordinated inauthentic behavior indicates professional execution.",
+    "riskLevel": "high",
+    "democraticImpact": "Potential to distort public opinion through artificial amplification and narrative control",
+    "precedent": "Similar techniques have been documented in multiple democracies (2016 US election, 2019 Brazilian election, etc.)"
+  },
+  
+  "sources": [
+    {
+      "@type": "schema:Dataset",
+      "name": "Social media monitoring",
+      "method": "automated_detection"
+    },
+    {
+      "@type": "schema:CreativeWork",
+      "name": "Open Source Intelligence Analysis",
+      "author": "Vladislav Smirnov",
+      "reference": "Political Technologies Framework"
+    }
+  ],
+  
+  "dc:creator": "OpenOSINT Pro + DARIVS Analysis",
+  "dc:date": "2026-08-11T14:30:00Z",
+  "dc:isVersionOf": "https://darivs.org/schema/political-operation",
+  "schema:version": "1.0"
+}
+```
+
+---
+
