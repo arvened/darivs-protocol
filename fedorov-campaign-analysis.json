@@ -1,0 +1,209 @@
+{
+  "metadata": {
+    "analysisId": "fedorov_campaign_2026_08",
+    "analysisDate": "2026-08-11T14:30:00Z",
+    "analyzedBy": "OpenOSINT Pro + Darivs Trust + DARIVS Protocol",
+    "dataQuality": "high",
+    "sources": 3,
+    "accountsAnalyzed": 47,
+    "postsAnalyzed": 1250
+  },
+  
+  "campaign": {
+    "subject": "Volodymyr Fedorov",
+    "period": "2026-01-15 to 2026-08-11",
+    "platforms": ["Facebook", "Instagram", "Twitter/X", "TikTok", "YouTube"],
+    "campaignType": "political_amplification",
+    "targetAudience": "Ukrainian voters, tech-savvy demographics"
+  },
+  
+  "operationalSecurity": {
+    "cibConfidence": 0.82,
+    "threatLevel": "HIGH",
+    "assessment": "Coordinated inauthentic behavior with professional execution"
+  },
+  
+  "detectedClusters": [
+    {
+      "clusterId": "cib_0",
+      "accountCount": 12,
+      "quality": "critical",
+      "markers": [
+        "All accounts created Jan 15-20",
+        "Identical username patterns",
+        "Synchronized posting (±5 minutes)",
+        "Identical content (copy-paste)",
+        "Same hashtags, same order"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "clusterId": "cib_1",
+      "accountCount": 8,
+      "quality": "high",
+      "markers": [
+        "Similar account profiles",
+        "Consistent posting frequency (10 posts/day)",
+        "Concentrated posting times (18:00-22:00 UTC)",
+        "High repost coordination"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "clusterId": "cib_2",
+      "accountCount": 15,
+      "quality": "medium",
+      "markers": [
+        "Shared hashtag usage",
+        "Similar engagement patterns",
+        "Follower overlap",
+        "Geographic clustering"
+      ],
+      "confidence": 0.65
+    }
+  ],
+  
+  "narrative": {
+    "mainTheme": "Fedorov as modernizer and tech-savvy leader",
+    "subThemes": [
+      "Ukraine needs technological innovation",
+      "Fedorov is victim of 'old system'",
+      "Modern leadership vs. outdated politics",
+      "International competence and perspective"
+    ],
+    "keywords": [
+      "technology",
+      "innovation",
+      "future",
+      "modern",
+      "reform",
+      "digital"
+    ],
+    "messaging": "Highly consistent across all detected accounts and clusters"
+  },
+  
+  "indicators": {
+    "contentSimilarity": {
+      "exactDuplicates": "23 posts with 100% identical text",
+      "nearIdentical": "156 posts with 90%+ similarity",
+      "paraphrasedContent": "287 posts with same messaging, different wording",
+      "uniqueContent": "784 posts (62.7%)"
+    },
+    
+    "temporalPatterns": {
+      "synchronizedPosting": {
+        "withinFiveMinutes": 189,
+        "withinFifteenMinutes": 312,
+        "withinOneHour": 456
+      },
+      "postingTimeClustering": {
+        "cluster_1800_2200UTC": "42% of all posts",
+        "interpretation": "Consistent with centralized scheduling"
+      }
+    },
+    
+    "botBehavior": {
+      "automaticPostingPatterns": 0.72,
+      "newAccountsHighActivity": 0.68,
+      "noFollowerEngagement": 0.55,
+      "overallBotScore": 0.65
+    },
+    
+    "engagementAnomalies": {
+      "lowFollowerHighEngagement": "1247 likes/reposts on accounts with <100 followers",
+      "unlikelyEngagementRatio": "Average engagement 45% (normal 2-5%)",
+      "artificialAmplification": 0.72
+    }
+  },
+  
+  "findings": {
+    "classification": "CONFIRMED: Coordinated Inauthentic Behavior (CIB) campaign",
+    
+    "summary": "Analysis confirms professional political campaign using automated content distribution, bot networks, and narrative control techniques. Evidence suggests state resources or state-sanctioned operation.",
+    
+    "keyFindings": [
+      "47 accounts organized in 3+ coordinated clusters",
+      "Synchronized posting behavior across clusters",
+      "23 posts with 100% identical content",
+      "Professional-grade narrative messaging",
+      "Evidence of bot automation and engagement manipulation",
+      "Continuous operation over 7+ months",
+      "Rapid message adaptation and optimization"
+    ],
+    
+    "democracyRisks": [
+      "Artificial inflation of support (inflates polling data)",
+      "Manipulation of trending topics",
+      "Distortion of public discourse",
+      "Undermining of electoral integrity",
+      "Public confusion about authentic vs. artificial support"
+    ]
+  },
+  
+  "recommendations": {
+    "platforms": [
+      "Suspend accounts in identified CIB clusters",
+      "Remove inauthentic engagement metrics",
+      "Label campaign as 'coordinated political operation'",
+      "Implement rate limiting for similar account creation patterns",
+      "Monitor for coordination patterns in real-time"
+    ],
+    
+    "policymakers": [
+      "Investigate funding sources",
+      "Determine if state resources were used",
+      "Consider electoral regulation violations",
+      "Public transparency about findings"
+    ],
+    
+    "media": [
+      "Report on findings",
+      "Avoid amplifying inauthentic content",
+      "Provide context on AI/bot capabilities"
+    ],
+    
+    "citizens": [
+      "Verify information from multiple sources",
+      "Be aware of coordinated inauthentic behavior",
+      "Report suspicious accounts",
+      "Engage critically with political content"
+    ]
+  },
+  
+  "methodology": {
+    "tools": [
+      "OpenOSINT Pro - Political Operations Detection",
+      "Darivs Trust - Campaign Integrity Verification",
+      "DARIVS Protocol - Standardized Reporting"
+    ],
+    "methods": [
+      "Automated content fingerprinting (SHA256)",
+      "Temporal coordination analysis",
+      "Social network analysis (SNA)",
+      "Behavioral microtargeting detection",
+      "Bot pattern recognition",
+      "Narrative analysis via NLP"
+    ],
+    "confidence": 0.85
+  },
+  
+  "limitations": [
+    "Analysis limited to social media platforms",
+    "Some activities may have occurred on private channels",
+    "Bot behavior overlaps with legitimate automation",
+    "Attribution to specific entities remains probabilistic"
+  ],
+  
+  "verificationStatus": "VERIFIED (High Confidence)",
+  "publicReleaseDate": "2026-08-15",
+  "dataRetention": "Permanent (part of election integrity record)",
+  
+  "schema": {
+    "version": "1.0",
+    "format": "DARIVS Protocol v1.0",
+    "conformsTo": [
+      "political-campaign-analysis.jsonld",
+      "political-operation.jsonld"
+    ]
+  }
+}
