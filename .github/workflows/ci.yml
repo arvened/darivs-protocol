@@ -1,4 +1,3 @@
-
 name: CI Pipeline
 
 on:
@@ -16,19 +15,31 @@ jobs:
 
     - name: Validate JSON Schema files
       run: |
-        for file in schema/*.json; do
-          echo "Checking $file"
-          python3 -m json.tool "$file" > /dev/null
-        done
-        echo "✓ All schema JSON files are valid"
+        shopt -s nullglob
+        files=(schema/*.json)
+        if [ ${#files[@]} -eq 0 ]; then
+          echo "No schema files found, skipping"
+        else
+          for file in "${files[@]}"; do
+            echo "Checking $file"
+            python3 -m json.tool "$file" > /dev/null
+          done
+          echo "✓ All schema JSON files are valid"
+        fi
 
     - name: Validate JSON-LD example files
       run: |
-        for file in examples/*.jsonld; do
-          echo "Checking $file"
-          python3 -m json.tool "$file" > /dev/null
-        done
-        echo "✓ All example JSON-LD files are valid"
+        shopt -s nullglob
+        files=(examples/*.jsonld)
+        if [ ${#files[@]} -eq 0 ]; then
+          echo "No example files found, skipping"
+        else
+          for file in "${files[@]}"; do
+            echo "Checking $file"
+            python3 -m json.tool "$file" > /dev/null
+          done
+          echo "✓ All example JSON-LD files are valid"
+        fi
 
   check-documentation:
     runs-on: ubuntu-latest
