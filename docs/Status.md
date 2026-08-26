@@ -1,6 +1,6 @@
 # Project Status
 
-**Last Updated:** August 12, 2026
+**Last Updated:** August 27, 2026
 
 ## Sprint 1 — Complete ✅
 
@@ -8,12 +8,14 @@
 - 172+ properties defined across all entities
 - Full specification document (docs/SPECIFICATION.md)
 - 5 real-world usage examples
-- GitHub Actions CI/CD pipeline configured
+- GitHub Actions CI/CD pipeline — passing ✅
 - MIT License, public repository
 
 ## Current Phase
 
 Development is ongoing ahead of the official NLnet grant execution period (starting September 1, 2026). This repository serves as a working proof-of-concept and foundation for the production-ready v0.1.0 release.
+
+CI/CD pipeline validates JSON Schema files, JSON-LD examples, and documentation completeness on every push and pull request.
 
 ## Next Milestones
 
@@ -24,3 +26,4 @@ Development is ongoing ahead of the official NLnet grant execution period (start
 ---
 
 Funded by NLnet Foundation — NGI Zero Commons Fund (Grant ID: 2026-06-4e7)
+
