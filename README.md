@@ -8,6 +8,16 @@
 [![JavaScript/TypeScript](https://img.shields.io/badge/JavaScript-ES2020%2B-yellow)](https://www.javascript.com/)
 
 ---
+## ⚠️ Development Status
+
+This repository is currently a **pre-grant proof-of-concept**. Development began ahead of the official NLnet grant execution period (September 1, 2026 – August 2027, Grant ID: 2026-06-4e7).
+
+The existing schemas, specification, and examples demonstrate the protocol's viability and initial design. Grant funding will finance the **production-ready implementation**: JSON-LD parser & validator, Python/JavaScript SDKs, 60%+ test coverage, security audit, and community adoption.
+
+See [docs/Status.md](docs/Status.md) for current development status.
+
+---
+
 
 ## 📌 О ПРОЕКТЕ
 
