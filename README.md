@@ -23,17 +23,17 @@ See [docs/Status.md](docs/Status.md) for current development status.
 
 **DARIVS PROTOCOL** — это открытый стандарт на базе JSON-LD для верификации волонтёрской деятельности и благотворительного воздействия. Протокол позволяет платформам обмениваться данными о добровольцах, проектах и влиянии де факто стандартизированным способом.
 
-### Зачем это нужно?
+ЗАЧЕМ ЭТО НУЖНО
+## 🔍 Чем отличается от существующих стандартов
 
-Волонтёрские платформы работают в изоляции. DARIVS PROTOCOL предоставляет:
+| Стандарт | Что покрывает | Чего не хватает для DARIVS |
+|---|---|---|
+| schema.org (VolunteerAction) | Базовая разметка волонтёрской активности для поисковиков | Нет модели верификации, нет portable credentials, нет impact metrics |
+| W3C Verifiable Credentials | Криптографическая верификация утверждений | Не специализирован под волонтёрство/благотворительность, нужна отдельная онтология для impact-данных |
+| ActivityStreams 2.0 | Модель социальных действий (посты, лайки) | Не покрывает верификацию организаций и impact/hours tracking |
 
-- ✅ **Unified data format** — один стандарт для всех платформ
-- ✅ **Portable credentials** — волонтёры берут свои данные с собой
-- ✅ **Interoperability** — платформы легко интегрируются друг с другом
-- ✅ **Trust layer** — верифицированные данные о воздействии
-- ✅ **Open source** — MIT license, community-driven
+DARIVS PROTOCOL объединяет специфичную для volunteer/charity-домена онтологию (Organization, Volunteer, Activity, impact_metric) со встроенной моделью верификации — то, что в существующих стандартах разбросано по разным несовместимым спецификациям.
 
----
 
 ## 🚀 БЫСТРЫЙ СТАРТ
 
@@ -228,9 +228,7 @@ python examples/cli_tool.py export --format jsonld
 ---
 
 ## 📊 СТАТУС ПРОЕКТА
-
-**Sprint 1 (29 июня - 6 июля 2026):**
-
+Завершено:
 - ✅ JSON-LD specification outline (draft v0.1)
 - ✅ Schema design document
 - ✅ Python SDK skeleton
@@ -238,18 +236,17 @@ python examples/cli_tool.py export --format jsonld
 - ✅ GitHub Actions CI/CD
 - ✅ 15+ commits, 20%+ coverage, 5+ issues
 
-**Sprint 2 (7 июля - 20 июля 2026):**
-
+В процессе (после одобрения гранта):
 - 🔄 Full Python SDK implementation
 - 🔄 Full JavaScript SDK implementation
 - 🔄 Integration examples (Discord, Telegram, REST)
 - 🔄 60%+ test coverage
 
-**Sprint 3 (21 июля - 31 августа 2026):**
-
+Планируется:
 - ⏳ Production release (v1.0)
 - ⏳ Security audit
 - ⏳ Community adoption
+
 
 ---
 
