@@ -1,16 +1,3 @@
-# ✅ ПОНЯЛ — АНГЛИЙСКИЙ
-
-File 9 (README.md) уже был на **АНГЛИЙСКОМ** ✅
-
----
-
-## 📝 FILE 10: `PROJECT_STRUCTURE.md`
-
-**Путь:** `PROJECT_STRUCTURE.md`
-
-**Скопируй этот текст:**
-
-```markdown
 # DARIVS PROTOCOL Project Structure
 
 ## Repository Layout
