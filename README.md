@@ -8,47 +8,46 @@
 [![JavaScript/TypeScript](https://img.shields.io/badge/JavaScript-ES2020%2B-yellow)](https://www.javascript.com/)
 
 ---
-## ⚠️ Development Status
+
+## 📋 Development Status
 
 This repository is currently a **pre-grant proof-of-concept**. Development began ahead of the official NLnet grant execution period (September 1, 2026 – August 2027, Grant ID: 2026-06-4e7).
 
-The existing schemas, specification, and examples demonstrate the protocol's viability and initial design. Grant funding will finance the **production-ready implementation**: JSON-LD parser & validator, Python/JavaScript SDKs, 60%+ test coverage, security audit, and community adoption.
+The existing schemas, specification draft, and JSON-LD examples demonstrate the protocol's viability and initial design. **If funded**, grant funding will finance the production-ready implementation: a working JSON-LD parser & validator, Python/JavaScript SDKs, 60%+ test coverage, security audit, and community adoption.
+
+**Nothing in this repository is published or installable yet.** The commands below describe the planned developer experience once SDKs are implemented.
 
 See [docs/Status.md](docs/Status.md) for current development status.
 
 ---
 
+## 🎯 What is DARIVS Protocol?
 
-## 📌 О ПРОЕКТЕ
+**DARIVS PROTOCOL** is a proposed open, JSON-LD-based data exchange format for verifying volunteer and charitable impact. The protocol aims to let platforms exchange data about volunteers, projects, and impact in a de facto standardized way.
 
-**DARIVS PROTOCOL** — это открытый стандарт на базе JSON-LD для верификации волонтёрской деятельности и благотворительного воздействия. Протокол позволяет платформам обмениваться данными о добровольцах, проектах и влиянии де факто стандартизированным способом.
+## 📐 Schema Overview
 
-ЗАЧЕМ ЭТО НУЖНО
-## 🔍 Чем отличается от существующих стандартов
+| Entity | Based on | Notes |
+|--------|----------|-------|
+| schema.org (VolunteerAction) | Extends existing vocabulary with portable credentials, impact metrics |
+| W3C Verifiable Credentials | Verification model |
+| ActivityStreams 2.0 | Activity events (create, complete) |
 
-| Стандарт | Что покрывает | Чего не хватает для DARIVS |
-|---|---|---|
-| schema.org (VolunteerAction) | Базовая разметка волонтёрской активности для поисковиков | Нет модели верификации, нет portable credentials, нет impact metrics |
-| W3C Verifiable Credentials | Криптографическая верификация утверждений | Не специализирован под волонтёрство/благотворительность, нужна отдельная онтология для impact-данных |
-| ActivityStreams 2.0 | Модель социальных действий (посты, лайки) | Не покрывает верификацию организаций и impact/hours tracking |
+DARIVS PROTOCOL defines JSON-LD schemas for volunteer/charity-adjacent core entities (Organization, Volunteer, Activity, impact_metric). The schemas currently exist as drafts; a reference implementation for validating and generating this data has not yet been built.
 
-DARIVS PROTOCOL объединяет специфичную для volunteer/charity-домена онтологию (Organization, Volunteer, Activity, impact_metric) со встроенной моделью верификации — то, что в существующих стандартах разбросано по разным несовместимым спецификациям.
+## 🚧 Planned Usage (not yet implemented)
 
-
-## 🚀 БЫСТРЫЙ СТАРТ
-
-### Установка Python SDK
+### Python SDK (planned)
 
 ```bash
+# Not yet published — will be available once the Python SDK is implemented
 pip install darivs-protocol
 ```
 
-### Пример 1: Создание записи о волонтёрской деятельности
-
 ```python
+# Illustrative example of the planned API — this code does not run yet
 from darivs_protocol import VolunteerActivity, Organization
 
-# Организация
 org = Organization(
     id="https://example.org/orgs/red-cross",
     name="Red Cross Ukraine",
@@ -56,7 +55,6 @@ org = Organization(
     verified=True
 )
 
-# Запись о деятельности
 activity = VolunteerActivity(
     volunteer_id="https://example.org/volunteers/alice",
     organization=org,
@@ -67,28 +65,27 @@ activity = VolunteerActivity(
     date="2026-06-29"
 )
 
-# Экспорт в JSON-LD
 json_ld = activity.to_jsonld()
 print(json_ld)
 ```
 
-### Пример 2: Верификация данных
-
 ```python
+# Illustrative example of the planned verification API — not yet implemented
 from darivs_protocol import VerificationService
 
 verifier = VerificationService()
 result = verifier.verify(json_ld_data)
 
 if result.is_valid:
-    print(f"✅ Verified by: {result.verified_by}")
+    print(f"Verified by: {result.verified_by}")
 else:
-    print(f"❌ Invalid: {result.errors}")
+    print(f"Invalid: {result.errors}")
 ```
 
-### Пример 3: JavaScript интеграция
+### JavaScript SDK (planned)
 
 ```javascript
+// Illustrative example of the planned API — this code does not run yet
 import { VolunteerActivity, Organization } from 'darivs-protocol';
 
 const org = new Organization({
@@ -110,156 +107,98 @@ console.log(jsonLd);
 
 ---
 
-## 📋 КОМПОНЕНТЫ
+## 📚 Components
 
-### 1. **JSON-LD Specification** (`/spec`)
+### 1. JSON-LD Specification (`/schema`)
 
-Полная спецификация формата данных:
+Contains the draft schema definitions for core entities:
 - Core entities (Organization, Volunteer, Activity)
 - Verification model
 - Impact metrics
 - Extensibility points
 
-📖 [Читать спецификацию](/docs/SPECIFICATION.md)
+See [Specification draft](docs/SPECIFICATION.md).
 
-### 2. **Python SDK** (`/python`)
+### 2. Python SDK (`/python`) — not yet implemented
 
-Полнофункциональный SDK для Python 3.10+:
+Planned SDK for Python 3.10+:
 - Pydantic v2 models
 - Validation & serialization
 - Verification service
 - Examples & tutorials
 
-```bash
-cd python
-pip install -e .
-pytest  # Run tests
-```
+### 3. JavaScript SDK (`/javascript`) — not yet implemented
 
-### 3. **JavaScript SDK** (`/javascript`)
-
-TypeScript-first SDK для Node.js и браузера:
+Planned TypeScript-first SDK for Node.js:
 - Full type safety
 - Async/await support
 - Verification service
 - Examples & integrations
 
-```bash
-cd javascript
-npm install
-npm test
-```
+---
+
+## 📄 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [SPECIFICATION.md](docs/SPECIFICATION.md) | JSON-LD specification draft (v0.1 draft) |
+| [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) | Repository layout and roadmap |
+| [Status.md](docs/Status.md) | Current development status |
+| [FAQ.md](docs/FAQ.md) | Frequently asked questions |
 
 ---
 
-## 📚 ДОКУМЕНТАЦИЯ
+## 🔌 Planned Integrations (not yet implemented)
 
-| Документ | Описание |
-|----------|---------|
-| [SPECIFICATION.md](/docs/SPECIFICATION.md) | JSON-LD спецификация v0.1 (draft) |
-| [PROJECT_STRUCTURE.md](/PROJECT_STRUCTURE.md) | Структура проекта и roadmap |
-| [SPRINT_1_REPORT.md](/SPRINT_1_REPORT.md) | Отчёт о первом спринте |
-| [COMMIT_LOG.md](/COMMIT_LOG.md) | История коммитов |
+The `examples/` directory currently contains JSON-LD data examples only (no executable code yet). Once the SDKs exist, planned integration examples include a Discord bot, a Telegram bot, a REST API adapter, a Jupyter analysis notebook, and a CLI utility.
 
 ---
 
-## 🔧 ПРИМЕРЫ ИНТЕГРАЦИЙ
-
-### 1. Discord Bot 🤖
-
-Бот для регистрации волонтёрской деятельности в Discord:
-
-```bash
-python examples/discord_bot.py
-```
-
-### 2. Telegram Bot 📱
-
-Интеграция с Telegram для верификации:
-
-```bash
-python examples/telegram_bot.py
-```
-
-### 3. REST API Adapter 🌐
-
-REST API wrapper для использования протокола в веб-приложениях:
-
-```bash
-python examples/rest_api.py
-# Сервер слушает http://localhost:8000
-```
-
-### 4. Jupyter Analysis Notebook 📊
-
-Анализ данных волонтёрской деятельности:
-
-```bash
-jupyter notebook examples/analysis.ipynb
-```
-
-### 5. CLI Utility 💻
-
-Командная строка для работы с DARIVS данными:
-
-```bash
-python examples/cli_tool.py verify activity.json
-python examples/cli_tool.py export --format jsonld
-```
-
----
-
-## ✅ ТРЕБОВАНИЯ
+## 🛠 Tech Stack (planned)
 
 ### Python SDK
-
 - Python 3.10+
 - pydantic >= 2.0
-- pytest (для тестов)
-- black, flake8, mypy (для quality checks)
+- pytest (for tests)
+- black, flake8, mypy (for quality checks)
 
 ### JavaScript SDK
-
 - Node.js 16+
 - TypeScript 4.5+
-- Jest (для тестов)
-- ESLint, Prettier (для quality checks)
+- Jest (for tests)
+- ESLint, Prettier (for quality checks)
 
 ---
 
-## 📊 СТАТУС ПРОЕКТА
-Завершено:
-- ✅ JSON-LD specification outline (draft v0.1)
-- ✅ Schema design document
-- ✅ Python SDK skeleton
-- ✅ README + examples directory
-- ✅ GitHub Actions CI/CD
-- ✅ 15+ commits, 20%+ coverage, 5+ issues
+## ✅ Current Progress
 
-В процессе (после одобрения гранта):
-- 🔄 Full Python SDK implementation
-- 🔄 Full JavaScript SDK implementation
-- 🔄 Integration examples (Discord, Telegram, REST)
-- 🔄 60%+ test coverage
+What exists today:
+- JSON-LD specification outline (draft v0.1)
+- Schema design document
+- README + examples directory (data examples only)
+- GitHub Actions CI (validates existing JSON/JSON-LD files and required docs)
 
-Планируется:
-- ⏳ Production release (v1.0)
-- ⏳ Security audit
-- ⏳ Community adoption
-
+What remains to be built (if funded):
+- Full Python SDK implementation
+- Full JavaScript SDK implementation
+- Integration examples (Discord, Telegram, REST)
+- 60%+ test coverage
+- Independent security audit
+- Production release (v1.0)
+- Community adoption
 
 ---
 
-## 🛠️ РАЗРАБОТКА
+## 🚀 Getting Started (once implementation exists)
 
-### Клонирование репо
+### Clone the repository
 
 ```bash
 git clone https://github.com/arvened/darivs-protocol.git
 cd darivs-protocol
 ```
 
-### Запуск тестов
+### Running tests (once SDKs are implemented)
 
 ```bash
 # Python
@@ -269,7 +208,7 @@ cd python && pytest -v --cov=darivs_protocol
 cd javascript && npm test
 ```
 
-### Code quality
+### Code quality (once SDKs are implemented)
 
 ```bash
 # Python
@@ -281,7 +220,7 @@ npm run lint && npm run format
 
 ---
 
-## 📝 LICENSE
+## 📜 LICENSE
 
 MIT License — see [LICENSE](/LICENSE) file
 
@@ -295,53 +234,16 @@ in the Software without restriction...
 
 ## 🤝 CONTRIBUTING
 
-Мы приветствуем контрибьюции! Пожалуйста:
+We welcome contributions! Suggested workflow:
 
-1. Fork репо
-2. Создай feature branch (`git checkout -b feature/amazing-thing`)
-3. Коммитируй изменения (`git commit -m 'Add amazing thing'`)
-4. Push в branch (`git push origin feature/amazing-thing`)
-5. Открой Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-thing`)
+3. Commit your changes (`git commit -m 'Add amazing thing'`)
+4. Push to the branch (`git push origin feature/amazing-thing`)
+5. Open a Pull Request
 
-**Требования для PR:**
-
-- ✅ Tests included (60%+ coverage)
-- ✅ Documentation updated
-- ✅ Code passes linting (black, flake8, mypy)
-- ✅ Atomic commits with clear messages
-
----
-
-## 📬 КОНТАКТЫ
-
-- **GitHub Issues:** [github.com/arvened/darivs-protocol/issues](https://github.com/arvened/darivs-protocol/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/arvened/darivs-protocol/discussions)
-- **Email:** hello@arvend.io
-
----
-
-## 🎯 ROADMAP
-
-**Q2 2026 (June - August):**
-- ✅ Specification v0.1 - v1.0
-- ✅ Python SDK alpha
-- ✅ JavaScript SDK alpha
-- ✅ 3+ integration examples
-
-**Q3 2026 (September - November):**
-- 🔄 Production releases (v1.0)
-- 🔄 Security audit
-- 🔄 Community adoption (2+ platforms)
-- 🔄 API documentation finalized
-
-**Q4 2026 - Q3 2027:**
-- ⏳ Extended SDKs (Go, Rust, Ruby)
-- ⏳ Governance model
-- ⏳ Official registry
-- ⏳ Conference presentations
-
----
-
-**Made with ❤️ by ARVEN Agency for NLnet NGI Zero Commons Fund**
-
-*DARIVS PROTOCOL — Empowering volunteer communities through open standarts.
+**When opening a PR:**
+'@
+Set-Content -Path README.md -Value $readme -NoNewline
+Get-Content README.md -TotalCount 10
+```
