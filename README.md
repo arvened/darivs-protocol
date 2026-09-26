@@ -11,7 +11,9 @@
 
 ## 📋 Development Status
 
-This repository is currently a **pre-grant proof-of-concept**. Development began ahead of the official NLnet grant execution period (September 1, 2026 – August 2027, Grant ID: 2026-06-4e7).
+This repository is currently a **pre-grant proof-of-concept**. An application (ID 2026-06-4e7, €35,000) has been submitted to the NLnet NGI Zero Commons Fund and is under review. **No funding has been awarded.**
+
+Disclosure: the lead applicant is Charity Fund "Glory of Ukraine". Eduard Arbitman, who maintains this repository, is a co-founder and the director of the foundation.
 
 The existing schemas, specification draft, and JSON-LD examples demonstrate the protocol's viability and initial design. **If funded**, grant funding will finance the production-ready implementation: a working JSON-LD parser & validator, Python/JavaScript SDKs, 60%+ test coverage, security audit, and community adoption.
 
@@ -27,9 +29,9 @@ See [docs/Status.md](docs/Status.md) for current development status.
 
 ## 📐 Schema Overview
 
-| Entity | Based on | Notes |
-|--------|----------|-------|
-| schema.org (VolunteerAction) | Extends existing vocabulary with portable credentials, impact metrics |
+| Builds on | Used for |
+|-----------|----------|
+| schema.org (VolunteerAction) | Base vocabulary, extended with portable credentials and impact metrics |
 | W3C Verifiable Credentials | Verification model |
 | ActivityStreams 2.0 | Activity events (create, complete) |
 
@@ -49,8 +51,8 @@ pip install darivs-protocol
 from darivs_protocol import VolunteerActivity, Organization
 
 org = Organization(
-    id="https://example.org/orgs/red-cross",
-    name="Red Cross Ukraine",
+    id="https://example.org/orgs/example-relief",
+    name="Example Relief Organisation",
     country="UA",
     verified=True
 )
@@ -89,8 +91,8 @@ else:
 import { VolunteerActivity, Organization } from 'darivs-protocol';
 
 const org = new Organization({
-  id: 'https://example.org/orgs/unicef',
-  name: 'UNICEF',
+  id: 'https://example.org/orgs/example-education',
+  name: 'Example Education Fund',
   country: 'UA'
 });
 
@@ -220,30 +222,21 @@ npm run lint && npm run format
 
 ---
 
-## 📜 LICENSE
+## Use of generative AI
 
-MIT License — see [LICENSE](/LICENSE) file
+The specification draft, schemas, examples and most of the documentation in this repository were generated with Claude (Anthropic) under the direction of Eduard Arbitman. His part was defining the requirements and design, reviewing and testing the generated output, finding and correcting errors, and deciding what goes into the repository. He is responsible for its content.
 
-Copyright (c) 2026 ARVEN Agency
+This follows the NLnet policy on generative AI. If the project is funded, AI assistants may still be used as tools, but the funded work will be done and understood by the human team, and every commit that adds AI-generated content will name the model and summarise the prompt in its commit message.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction...
+## Contributing
 
----
+Contributions are welcome:
 
-## 🤝 CONTRIBUTING
+1. Fork the repository and create a feature branch.
+2. Keep changes small and focused; describe what changed and why.
+3. If a commit adds AI-generated content, name the model and summarise the prompt in the commit message.
+4. Open a pull request against main. The GitHub Actions checks must pass.
 
-We welcome contributions! Suggested workflow:
+## License
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-thing`)
-3. Commit your changes (`git commit -m 'Add amazing thing'`)
-4. Push to the branch (`git push origin feature/amazing-thing`)
-5. Open a Pull Request
-
-**When opening a PR:**
-'@
-Set-Content -Path README.md -Value $readme -NoNewline
-Get-Content README.md -TotalCount 10
-```
+MIT, see [LICENSE](LICENSE).
